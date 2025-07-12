@@ -1,0 +1,60 @@
+/* Active link styling with blue box */
+.navbar-nav .nav-link.active {
+  border: 2px solid #2196f3 !important;
+  border-radius: 8px;
+  background-color: #e3f2fd !important;
+  color: #0d47a1 !important;
+  font-weight: 600;
+  padding: 8px 16px !important;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.navbar-nav .nav-link.active:hover {
+  background-color: #bbdefb !important;
+  border-color: #1976d2 !important;
+  color: #0d47a1 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+/* Regular nav links styling */
+.navbar-nav .nav-link {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  margin: 0 4px;
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+  background-color: #f5f5f5;
+  color: #2196f3 !important;
+}
+
+/* Ensure navbar brand doesn't get affected */
+.navbar-brand {
+  margin-right: 2rem;
+}
+
+/* Post Job button styling (when not logged in) */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin: 2px 0;
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-link.active {
+    margin: 2px 0;
+  }
+}

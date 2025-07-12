@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* index.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* HomePage.css */
+.homepage-root {
+  width: 100vw;
+  height: 100vh;
+  background: #f4f6fa;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.homepage-hero-flex {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.homepage-hero-text-half,
+.homepage-hero-image-half {
+  flex: 0 0 50%;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6fa;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.homepage-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 900px) {
+  .homepage-hero-flex {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .homepage-hero-text-half,
+  .homepage-hero-image-half {
+    width: 100vw;
+    height: 50vh;
+  }
+}

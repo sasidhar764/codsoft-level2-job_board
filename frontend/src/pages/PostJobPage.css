@@ -1,0 +1,335 @@
+/* Fix for full-height gradient background */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.post-job-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #764ba2 100%);
+  background-attachment: fixed; /* Keeps background fixed during scroll */
+  padding: 40px 0;
+  width: 100vw;
+  /* Alternative approach - ensure background covers all content */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Alternative solution - use this if background-attachment doesn't work */
+.post-job-page-wrapper-alt {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: calc(100vh + 200px); /* Add extra height for scrolling */
+  padding: 40px 0;
+  width: 100vw;
+}
+
+.post-job-container {
+  width: 100%;
+  max-width: none;
+  padding: 0 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.post-job-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 32px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.post-job-header {
+  background: linear-gradient(135deg, #2196f3 0%, #1769aa 100%);
+  color: #fff;
+  padding: 40px 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.post-job-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -1px;
+}
+
+.post-job-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+}
+
+.post-job-form-container {
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-job-form {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+}
+
+.post-job-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.post-job-form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.post-job-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.post-job-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-job-label-icon {
+  font-size: 1.1rem;
+  color: #2196f3;
+}
+
+.post-job-input {
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-job-input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  transform: translateY(-1px);
+}
+
+.post-job-textarea {
+  min-height: 150px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.post-job-select {
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-job-select:focus {
+  outline: none;
+  border-color: #d0d7dc;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.post-job-submit-container {
+  margin-top: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.post-job-submit-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  min-width: 200px;
+}
+
+.post-job-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+}
+
+.post-job-submit-btn:active {
+  transform: translateY(0);
+}
+
+.post-job-submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.post-job-loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.post-job-message {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-job-message.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 2px solid #a7f3d0;
+}
+
+.post-job-message.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 2px solid #fca5a5;
+}
+
+.post-job-tips {
+  background: #f0f9ff;
+  border: 2px solid #bae6fd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-job-tips-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0369a1;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-job-tips-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #0369a1;
+}
+
+.post-job-tips-list li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .post-job-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .post-job-container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-job-container {
+    padding: 0 20px;
+  }
+  
+  .post-job-header {
+    padding: 32px 24px;
+  }
+  
+  .post-job-title {
+    font-size: 2rem;
+  }
+  
+  .post-job-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .post-job-form-container {
+    padding: 32px 24px;
+  }
+  
+  .post-job-form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .post-job-submit-btn {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-job-page-wrapper {
+    padding: 20px 0;
+  }
+  
+  .post-job-container {
+    padding: 0 16px;
+  }
+  
+  .post-job-header {
+    padding: 24px 20px;
+  }
+  
+  .post-job-form-container {
+    padding: 24px 20px;
+  }
+  
+  .post-job-input,
+  .post-job-select {
+    padding: 12px 14px;
+  }
+}
